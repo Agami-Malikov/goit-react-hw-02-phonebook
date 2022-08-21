@@ -1,17 +1,15 @@
 import PropTypes from 'prop-types';
+import s from './contactList.module.css'
 
 const ContactList = ({ contacts, removeContact }) => {
   const elements = contacts.map(({ id, name, number }) => (
-    <>
-      <li key={id}>
-        {name}: {number}
-        <button type="button" onClick={() => removeContact(id)}>
-          remove
-        </button>
-      </li>
-    </>
+    <li className={s.item} key={id}>
+      {name}: {number}
+      <button className={s.btn} type="button" onClick={() => removeContact(id)}>
+        remove
+      </button>
+    </li>
   ));
-  console.log(elements);
   return <ul>{elements}</ul>;
 };
 
@@ -21,12 +19,13 @@ ContactList.defaultProps = {
   contacts: [],
 };
 
-ContactList.prototypes = {
+ContactList.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      name: PropTypes.func.isRequired,
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
       number: PropTypes.string.isRequired,
     })
   ),
+  removeContact: PropTypes.func.isRequired,
 };

@@ -1,7 +1,16 @@
+import PropTypes from 'prop-types';
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
 
 class Form extends Component {
+  static defaultProps = {
+    onSubmit: () => {},
+  };
+
+  static propTypes = {
+    onSubmit: PropTypes.func,
+  };
+
   state = {
     name: '',
     number: '',

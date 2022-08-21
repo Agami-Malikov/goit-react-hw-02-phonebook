@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { nanoid } from 'nanoid';
 import ContactList from './ContactList/ContactList';
 import Form from './Form/Form';
-import Filter from './ContactList/Filter/Filter';
+import Filter from './Filter/Filter';
 
 class Phonebook extends Component {
   state = {

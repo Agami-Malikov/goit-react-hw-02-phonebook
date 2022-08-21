@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Filter = ({ onChange }) => {
   return (
     <>
@@ -8,3 +10,7 @@ const Filter = ({ onChange }) => {
 };
 
 export default Filter;
+
+Filter.propTypes = {
+  onChange: PropTypes.func.isRequired,
+};
